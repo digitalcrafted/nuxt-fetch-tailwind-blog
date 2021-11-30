@@ -19,6 +19,10 @@
   "author": "Francis <franconwu@gmail.com>",
   "license": "ISC",
   "dependencies": {
-    "nuxt": "^2.15.8"
+    "nuxt": "^2.15.8",
+    "vuejs-paginate": "^2.1.0"
+  },
+  "devDependencies": {
+    "@nuxtjs/tailwindcss": "^4.2.1"
   }
 }
