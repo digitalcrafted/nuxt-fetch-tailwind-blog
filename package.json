@@ -1,0 +1,18 @@
+{
+  "name": "factorial-test",
+  "version": "1.0.0",
+  "description": "Coding challenge for Francis",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://source.factorial.io/applicants/francis-onwumere.git"
+  },
+  "keywords": [
+    "factorial"
+  ],
+  "author": "Francis <franconwu@gmail.com>",
+  "license": "ISC"
+}
