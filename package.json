@@ -17,5 +17,8 @@
     "factorial"
   ],
   "author": "Francis <franconwu@gmail.com>",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "nuxt": "^2.15.8"
+  }
 }
