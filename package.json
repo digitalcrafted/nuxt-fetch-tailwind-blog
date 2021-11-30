@@ -4,7 +4,10 @@
   "description": "Coding challenge for Francis",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "generate": "nuxt generate",
+    "start": "nuxt start"
   },
   "repository": {
     "type": "git",
