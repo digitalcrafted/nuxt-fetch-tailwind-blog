@@ -19,6 +19,7 @@
   "author": "Francis <franconwu@gmail.com>",
   "license": "ISC",
   "dependencies": {
+    "@nuxtjs/axios": "^5.13.6",
     "nuxt": "^2.15.8",
     "vuejs-paginate": "^2.1.0"
   },
