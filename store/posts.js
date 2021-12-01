@@ -50,7 +50,7 @@ export const mutations = {
   }
 }
 export const getters = {
-  getIcons(state) {
-    return state.icons
+  getPosts(state) {
+    return state.posts
   }
 }
