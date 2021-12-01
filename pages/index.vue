@@ -1,6 +1,8 @@
 <template>
   <div>
-    {{ postsList }}
+    <Header />
+    <Posts :active-page="activePage" :pages='pages' :posts="posts" @switchPage="switchPage" />
+    <Footer />
   </div>
 </template>
 <script>
@@ -10,6 +12,7 @@ export default {
   data () {
     return {
       postsList: [],
+      activePage: 1,
       search: null
     }
   },
@@ -24,19 +27,18 @@ export default {
     }
   },
   mounted () {
-    if (!this.posts.length) {
+    /*handle direct page visits that does not use the pagination*/
       this.$nuxt.$store.dispatch('posts/fetchPosts', {page: 1 || this.$route.query.page}).then(() => {
         this.getPostsList()
       })
-    }
-    this.getPostsList()
   },
   methods: {
     getPostsList () {
       this.postsList = this.posts
     },
-    switchPage (cat) {
-      this.$nuxt.$store.dispatch('posts/fetchPosts', { page: cat }).then(() => {
+    switchPage (page) {
+      console.log('here')
+      this.$nuxt.$store.dispatch('posts/fetchPosts', { page: page }).then(() => {
         this.getPostsList()
       })
     },
@@ -54,3 +56,4 @@ export default {
 
 }
 </script>
+<style></style>
