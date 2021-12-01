@@ -17,7 +17,7 @@
         <div class="hidden text-gray-700 md:flex flex-col md:flex-row md:ml-auto mt-3 md:mt-0" ref="collapse">
           <nuxt-link  :to="{path: '/'}"  class="p-2 lg:px-4 md:mx-2 rounded" :class="{' text-white bg-black': $route.name ==='index'}">Home</nuxt-link>
           <nuxt-link  :to="{path: '/about'}" class="p-2 lg:px-4 md:mx-2 rounded hover:bg-gray-200 hover:text-gray-700 transition-colors duration-300" :class="{'bg-black text-white': $route.name ==='about'}">About</nuxt-link>
-          <nuxt-link  :to="{path: '/'}"  class="p-2 lg:px-4 md:mx-2 rounded hover:bg-gray-200 hover:text-gray-700 transition-colors duration-300" :class="{'bg-black text-white': $route.name ==='blog'}">Blog</nuxt-link>
+          <nuxt-link  :to="{path: '/blog'}"  class="p-2 lg:px-4 md:mx-2 rounded hover:bg-gray-200 hover:text-gray-700 transition-colors duration-300" :class="{'bg-black text-white': $route.name ==='blog'}">Blog</nuxt-link>
         </div>
       </div>
     </nav>
