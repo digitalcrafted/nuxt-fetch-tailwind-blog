@@ -1,7 +1,7 @@
 <template>
   <div>
     <Header />
-    <Posts :active-page="activePage" :pages='pages' @switchPage="switchPage" />
+    <Posts :active-page="activePage" :pages='pages' :posts="posts" @switchPage="switchPage" />
     <Footer />
   </div>
 </template>
