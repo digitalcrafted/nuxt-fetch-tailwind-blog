@@ -1,5 +1,5 @@
 <template>
-  <div>gg
+  <div>
     {{ postsList }}
   </div>
 </template>
@@ -25,7 +25,7 @@ export default {
   },
   mounted () {
     if (!this.posts.length) {
-      this.$nuxt.$store.dispatch('posts/fetchPosts', {page: 1 || $this.$route.query.page}).then(() => {
+      this.$nuxt.$store.dispatch('posts/fetchPosts', {page: 1 || this.$route.query.page}).then(() => {
         this.getPostsList()
       })
     }
@@ -33,26 +33,18 @@ export default {
   },
   methods: {
     getPostsList () {
-      this.postsList = this.posts.filter((product) => {
-          return product.catname === this.selectedCategory
-        })
+      this.postsList = this.posts
     },
     switchPage (cat) {
-      this.$nuxt.$store.dispatch('products/fetchProducts', { page: cat }).then(() => {
-        this.getProductsList()
+      this.$nuxt.$store.dispatch('posts/fetchPosts', { page: cat }).then(() => {
+        this.getPostsList()
       })
     },
     filterPosts (arg) {
       if (arg.length > 3) {
-        this.postsList = this.posts.reduce(
-          function (list, item) {
-            if (item.name.includes(arg)) {
-              list.push(item)
-            }
-            return list
-          },
-          []
-        )
+        this.postsList = this.posts.filter((post)=>{
+          return post.title === arg
+        })
         return this.postsList
       } else {
         this.getPostsList()
