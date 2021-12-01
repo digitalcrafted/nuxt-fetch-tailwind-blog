@@ -8,15 +8,59 @@
            </li>
       </ul>
     </div>
-    <div class="text-center">
-      <button class="rounded-sm bg-gray-900 text-white tracking-widest text-sm uppercase font-medium py-3 mt-5 px-5">Load more articles</button>
+    <div class="text-center m-auto mt-4 mb-4">
+      <paginate
+        v-if="pages.total > 1"
+        v-model="currentPage"
+        :page-count="pages.total"
+        :page-range="pages.per_page"
+        :margin-pages="pages.total"
+        :click-handler="doSwitchPage"
+        :prev-text="'Prev'"
+        :next-text="'Next'"
+        :container-class="'flex justify-center mt-10 space-x-1'"
+        :class="'flex justify-center mt-10 space-x-1'"
+        :page-class="'flex items-center justify-center h-8 w-8 rounded hover:bg-indigo-200 text-sm font-medium text-gray-600 hover:text-indigo-600'"
+        :page-link-class="'flex items-center justify-center h-8 w-8 rounded hover:bg-indigo-200 text-sm font-medium text-gray-600 hover:text-indigo-600'"
+        :prev-class="'flex items-center justify-center h-8 w-8 rounded text-gray-400'"
+        :prev-link-class="'flex items-center justify-center h-8 px-2 rounded text-sm font-medium text-gray-400'"
+        :next-class="'flex items-center justify-center h-8 px-2 rounded hover:bg-indigo-200 text-sm font-medium text-gray-600 hover:text-indigo-600'"
+        :next-link-class="'flex items-center justify-center h-8 w-8 rounded hover:bg-indigo-200 text-gray-600 hover:text-indigo-600'"
+        :active-class="'bg-blue-400'"
+        :hide-prev-next="false"
+      />
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Posts'
+  name: 'Posts',
+  props: {
+    activePage: {
+      type: Number,
+      default: 1
+    },
+    pages: {
+      type: Object,
+      default: () => {}
+    }
+  },
+  data () {
+    return {
+      currentPage: 1
+    }
+  },
+  watch: {
+    activePage(current){
+      this.currentPage = current
+    }
+  },
+  methods: {
+    doSwitchPage (arg) {
+      this.$emit('switchPage', arg)
+    }
+  }
 }
 </script>
 
