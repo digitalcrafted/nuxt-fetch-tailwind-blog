@@ -51,10 +51,6 @@ export default {
       } else {
         this.getPostsList()
       }
-    },
-    toggleBtn(){
-      this.$refs['collapse'].classList.toggle("hidden");
-      this.$refs['collapse'].classList.toggle("flex");
     }
   }
 
