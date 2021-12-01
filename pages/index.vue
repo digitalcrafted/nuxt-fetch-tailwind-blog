@@ -11,11 +11,10 @@
               <i class="fas fa-bars"></i>
             </button>
           </div>
-
-          <div class="hidden md:flex flex-col md:flex-row md:ml-auto mt-3 md:mt-0" ref="collapse">
-            <nuxt-link  :to="{path: '/'}"  class="p-2 lg:px-4 md:mx-2 text-white rounded bg-indigo-600">Home</nuxt-link>
-            <nuxt-link  :to="{path: '/about'}" class="p-2 lg:px-4 md:mx-2 text-gray-600 rounded hover:bg-gray-200 hover:text-gray-700 transition-colors duration-300">About</nuxt-link>
-            <nuxt-link  :to="{path: '/'}"  class="p-2 lg:px-4 md:mx-2 text-gray-600 rounded hover:bg-gray-200 hover:text-gray-700 transition-colors duration-300">Blog</nuxt-link>
+          <div class="hidden text-gray-700 md:flex flex-col md:flex-row md:ml-auto mt-3 md:mt-0" ref="collapse">
+            <nuxt-link  :to="{path: '/'}"  class="p-2 lg:px-4 md:mx-2 rounded" :class="{' text-white bg-black': $route.name ==='index'}">Home</nuxt-link>
+            <nuxt-link  :to="{path: '/about'}" class="p-2 lg:px-4 md:mx-2 rounded hover:bg-gray-200 hover:text-gray-700 transition-colors duration-300" :class="{'bg-black text-white': $route.name ==='about'}">About</nuxt-link>
+            <nuxt-link  :to="{path: '/'}"  class="p-2 lg:px-4 md:mx-2 rounded hover:bg-gray-200 hover:text-gray-700 transition-colors duration-300" :class="{'bg-black text-white': $route.name ==='blog'}">Blog</nuxt-link>
           </div>
         </div>
       </nav>
@@ -159,5 +158,4 @@ export default {
 
 }
 </script>
-<style>
-</style>
+<style></style>
