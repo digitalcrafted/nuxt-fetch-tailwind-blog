@@ -3,7 +3,7 @@
     <div class="container px-4 mx-auto flex h-80">
       <div class="text-center text-white max-w-2xl m-auto">
         <h1 class="text-3xl md:text-4xl font-semibold mb-2 text-shadow">{{  caption }}</h1>
-        <h2 class="text-2xl md:text-3xl sm:text-1xl font-semibold md:leading-loose text-shadow">{{ subCaption }}</h2>
+        <h2 class="text-2xl md:text-1xl sm:text-1xl font-semibold md:leading-loose text-shadow">{{ subCaption }}</h2>
       </div>
     </div>
   </div>
