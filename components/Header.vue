@@ -21,16 +21,6 @@
         </div>
       </div>
     </nav>
-
-    <div class="bg-hero-bg">
-      <div class="container px-4 mx-auto flex h-80">
-        <div class="text-center text-white max-w-2xl m-auto">
-          <h1 class="text-3xl md:text-4xl font-semibold mb-2 text-shadow">Thoughts</h1>
-          <h2 class="text-2xl md:text-3xl sm:text-1xl font-semibold md:leading-loose text-shadow">on strategy, workflows and code</h2>
-        </div>
-      </div>
-    </div>
-
   </header>
 </template>
 

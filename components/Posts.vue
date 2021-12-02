@@ -1,6 +1,5 @@
 <template>
   <div class="bg-gray-100">
-    <!-- featured -->
     <div class="max-w-5xl mx-auto pt-10 pb-10">
       <ul v-if="posts.length" class="flex flex-wrap -mx-2 overflow-hidden">
            <li class="my-2 px-2 w-full overflow-hidden md:w-1/3 lg:w-1/3 xl:w-1/3" v-for="(post, index) in posts" :key="index">

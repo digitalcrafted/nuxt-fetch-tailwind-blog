@@ -1,10 +1,10 @@
 <template>
-    <footer class="bg-gray-900 text-center sm:text-left">
+    <footer class="bg-gray-900 text-center sm:text-left mt-5">
         <div class="max-w-5xl mx-auto pb-10 pt-10 text-white">
             <ul>
                 <li class="inline-block"><nuxt-link :to="{path: '/'}" class="block font-semibold px-3" >Home</nuxt-link></li>
                 <li class="inline-block"><nuxt-link  :to="{path: '/about'}"  class="block font-semibold px-3">About</nuxt-link></li>
-                <li class="inline-block"><nuxt-link  :to="{path: '/'}"  class="block font-semibold px-3">Blog</nuxt-link></li>
+                <li class="inline-block"><nuxt-link  :to="{path: '/blog'}"  class="block font-semibold px-3">Blog</nuxt-link></li>
             </ul>
             <div class="sm:flex px-3">
                 <div class="w-full sm:w-1/2">

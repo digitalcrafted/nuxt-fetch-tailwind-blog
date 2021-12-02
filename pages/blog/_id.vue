@@ -1,7 +1,8 @@
 <template>
   <div>
     <Header />
-    <Posts :active-page="activePage" :pages='pages' :posts="posts" @switchPage="switchPage" />
+    <Hero :caption="post.title" :sub-caption="post.created_at" :image="post.image"/>
+    <Article :post="post"/>
     <Footer />
   </div>
 </template>
@@ -17,40 +18,22 @@ export default {
     }
   },
   computed: {
-    ...mapState('posts', ['posts', 'pages'])
+    ...mapState('posts', ['posts', 'pages', 'post'])
   },
   watch: {
     $route() {
-      console.log(this.$route.params.id)
+      this.getPost(this.$route.params.id)
     }
   },
   mounted () {
     console.log(this.$route.params.id)
     /*handle direct page visits that does not use the pagination*/
-      this.$nuxt.$store.dispatch('posts/fetchPosts', {id: this.$route.params.id}).then(() => {
-        this.getPostsList()
-      })
+      this.$nuxt.$store.dispatch('posts/fetchPost', {id: this.$route.params.id}).then(() => {})
   },
   methods: {
-    getPostsList () {
-      this.postsList = this.posts
+    getPost (id) {
+      this.$nuxt.$store.dispatch('posts/fetchPost', {id}).then(() => {})
     },
-    switchPage (page) {
-      console.log('here')
-      this.$nuxt.$store.dispatch('posts/fetchPosts', { page: page }).then(() => {
-        this.getPostsList()
-      })
-    },
-    filterPosts (arg) {
-      if (arg.length > 3) {
-        this.postsList = this.posts.filter((post)=>{
-          return post.title === arg
-        })
-        return this.postsList
-      } else {
-        this.getPostsList()
-      }
-    }
   }
 
 }

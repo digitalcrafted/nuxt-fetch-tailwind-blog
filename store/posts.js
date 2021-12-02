@@ -10,13 +10,22 @@ function initialState() {
       per_page: 3,
       prev_page_url: null,
       total: null
+    },
+    post:   {
+      id: null,
+      title: null,
+      post: null,
+      summary: null,
+      image: null,
+      created_at: null
     }
   }
 }
 
 export const state = () => ({
   posts: initialState().posts,
-  pages: initialState().pages
+  pages: initialState().pages,
+  post: initialState().post
 })
 export const actions = {
   async fetchPosts({ commit, dispatch }, options) {
@@ -25,6 +34,16 @@ export const actions = {
       await this.$axios.$get('posts.json').then((response) => {
         commit('setPosts', {page, posts: response})
         commit('setPages', {page, posts: response})
+      })
+    } catch (e) {
+      console.log(e.message)
+    }
+  },
+  async fetchPost({ commit, dispatch }, options) {
+    try {
+      const id = options.id
+      await this.$axios.$get('posts.json').then((response) => {
+        commit('setPost', {id, posts: response})
       })
     } catch (e) {
       console.log(e.message)
@@ -38,6 +57,16 @@ export const mutations = {
     state.posts = []
     /*prevent array mutation by cloning the array*/
     state.posts = [...data.posts].splice(((page-1) * state.pages.per_page), state.pages.per_page )
+  },
+  setPost(state, data) {
+    const id = Number(data.id)
+    const posts = data.posts
+    state.post = initialState().post
+    posts.filter((post)=> {
+      if(post.id === id){
+        state.post = JSON.parse(JSON.stringify(post))
+      }
+    })
   },
   setPages(state, data) {
     state.pages = initialState().pages

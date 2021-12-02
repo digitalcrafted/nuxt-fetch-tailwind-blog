@@ -1,6 +1,7 @@
 <template>
   <div>
     <Header />
+    <Hero />
     <Posts :active-page="activePage" :pages='pages' :posts="posts" @switchPage="switchPage" />
     <Footer />
   </div>
