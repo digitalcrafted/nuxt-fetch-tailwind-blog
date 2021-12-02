@@ -1,15 +1,15 @@
 <template>
   <div>
     <Header />
-    <Hero />
-    <Posts :active-page="activePage" :pages='pages' :posts="posts" @switchPage="switchPage" />
+    <Hero caption="About"/>
+    <About/>
     <Footer />
   </div>
 </template>
 <script>
 import { mapState } from 'vuex'
 export default {
-  name: 'BlogIndex',
+  name: 'AboutPage',
   data () {
     return {
       postsList: [],
@@ -20,11 +20,11 @@ export default {
   head() {
     const img =  'https://bo.factorial.io/sites/default/files/styles/hero_image__large__1x/public/2020-04/_99B5622.jpg.webp?h=b9aa6a85&itok=lx7mK32f'
     return {
-      title: 'Factorial Blog',
+      title: 'About Factorial',
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        { hid: 'og:title', property: 'og:title', content: 'Factorial Blog' },
+        { hid: 'og:title', property: 'og:title', content: 'About Factorial' },
         { hid: 'description', name: 'description', content: 'on strategy, workflows and code' },
         {
           hid: 'og:description',
@@ -46,41 +46,22 @@ export default {
     }
   },
   computed: {
-    ...mapState('posts', ['posts', 'pages'])
+    ...mapState('posts', ['posts', 'pages', 'post'])
   },
   watch: {
-    search (val) {
-      setTimeout(() => {
-        this.filterPosts(val)
-      }, 2000)
+    $route() {
+      this.getPost(this.$route.params.id)
     }
   },
   mounted () {
+    console.log(this.$route.params.id)
     /*handle direct page visits that does not use the pagination*/
-      this.$nuxt.$store.dispatch('posts/fetchPosts', {page: 1 || this.$route.query.page}).then(() => {
-        this.getPostsList()
-      })
+      this.$nuxt.$store.dispatch('posts/fetchPost', {id: this.$route.params.id}).then(() => {})
   },
   methods: {
-    getPostsList () {
-      this.postsList = this.posts
+    getPost (id) {
+      this.$nuxt.$store.dispatch('posts/fetchPost', {id}).then(() => {})
     },
-    switchPage (page) {
-      console.log('here')
-      this.$nuxt.$store.dispatch('posts/fetchPosts', { page: page }).then(() => {
-        this.getPostsList()
-      })
-    },
-    filterPosts (arg) {
-      if (arg.length > 3) {
-        this.postsList = this.posts.filter((post)=>{
-          return post.title === arg
-        })
-        return this.postsList
-      } else {
-        this.getPostsList()
-      }
-    }
   }
 
 }

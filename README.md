@@ -1,3 +1,17 @@
+# Coding challenge Response from Francis
+
+Hi Julian and Michi,
+
+Thank you for the this interesting challenge.
+
+I have completed the challenge, as close to the specification as possible.
+
+*To Build, Release, and Run the project*
+1. Pull the repo updates into your local directory and _cd_ into it
+2. run `yarn && yarn dev`
+
+Thank you and happy reviewing
+
 # Coding challenge for Francis
 
 Hi Francis,
