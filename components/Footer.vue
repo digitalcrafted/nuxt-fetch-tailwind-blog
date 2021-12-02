@@ -1,5 +1,5 @@
 <template>
-    <footer class="bg-gray-900 text-center sm:text-left mt-5">
+    <footer class="bg-gray-900 text-center sm:text-left">
         <div class="max-w-5xl mx-auto pb-10 pt-10 text-white">
             <ul>
                 <li class="inline-block"><nuxt-link :to="{path: '/'}" class="block font-semibold px-3" >Home</nuxt-link></li>

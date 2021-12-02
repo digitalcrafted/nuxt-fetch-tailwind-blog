@@ -4,7 +4,7 @@
           <div class="absolute w-full h-full bg-black z-10 opacity-50"></div>
           <div class="relative z-20 text-center p-5">
             <h3 class="text-white text-shadow font-semibold font-serif text-xl my-1">{{ data.title }}</h3>
-            <span class="inline-block text-xs text-white text-shadow font-sans">{{ data.summary }}</span>
+            <span class="inline-block text-xs text-white text-shadow font-sans">{{ data.summary | truncate(50) }}</span>
           </div>
         </div>
       </nuxt-link>

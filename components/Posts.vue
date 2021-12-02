@@ -7,7 +7,7 @@
            </li>
       </ul>
     </div>
-    <div class="text-center m-auto mt-4 mb-4">
+    <div class="text-center m-auto pt-4 pb-4">
       <paginate
         v-if="pages.total > 1"
         v-model="currentPage"
