@@ -1,7 +1,7 @@
 <template>
   <div>
     <Header />
-    <Hero :caption="post.title" :sub-caption="post.created_at" :image="post.image"/>
+    <Hero :caption="post.title" :sub-caption="formatDate" :image="post.image"/>
     <Article :post="post"/>
     <Footer />
   </div>
@@ -46,7 +46,11 @@ export default {
     }
   },
   computed: {
-    ...mapState('posts', ['posts', 'pages', 'post'])
+    ...mapState('posts', ['posts', 'pages', 'post']),
+    formatDate () {
+        const options = { year: "numeric", month: "long", day: "numeric" }
+        return new Date(this.post.created_at * 1000).toLocaleString("en-GB", options)
+    }
   },
   watch: {
     $route() {
