@@ -9,6 +9,7 @@ I have completed the challenge, as close to the specification as possible.
 *To Build, Release, and Run the project*
 1. Pull the repo updates into your local directory and _cd_ into it
 2. run `yarn && yarn dev`
+3. Please note the solution was tested in Brave (A Chromium browser), but it should work ok in most modern browser.
 
 Thank you and happy reviewing
 
