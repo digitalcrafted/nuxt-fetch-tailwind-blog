@@ -9,7 +9,7 @@
 <script>
 import { mapState } from 'vuex'
 export default {
-  name: 'Home',
+  name: 'BlogIndex',
   data () {
     return {
       postsList: [],
