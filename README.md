@@ -1,4 +1,4 @@
-# Coding challenge Response for Julian and Michi
+# Coding challenge Solution for Julian and Michi
 
 Hi Julian and Michi,
 
