@@ -49,8 +49,15 @@ export const actions = {
   async fetchPost ({commit, dispatch}, options) {
     try {
       const id = options.id
-      await this.$axios.$get('posts.json').then((response) => {
-        commit('setPost', {id, posts: response})
+      await fetch('posts.json').then(async response => {
+        const data = await response.json()
+        commit('setPost', {id, posts: data})
+        // check for error response
+        if (!data.length) {
+          // get error message from body or default to response statusText
+          const error = (data && data.message) || response.statusText
+          return Promise.reject(error)
+        }
       })
     } catch (e) {
       console.log(e.message)
