@@ -1,7 +1,7 @@
 {
-  "name": "factorial-test",
+  "name": "nuxt-fetch-tailwind-blog",
   "version": "1.0.0",
-  "description": "Coding challenge for Francis",
+  "description": "Explore Fetch in Nuxt and Sprinkle Tailwind",
   "main": "index.js",
   "scripts": {
     "dev": "nuxt",
@@ -11,10 +11,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://source.factorial.io/applicants/francis-onwumere.git"
+    "url": "https://github.com/digitalcrafted/nuxt-fetch-tailwind-blog.git"
   },
   "keywords": [
-    "factorial"
+    "nuxt",
+    "tailwind",
+    "fetch"
   ],
   "author": "Francis <franconwu@gmail.com>",
   "license": "ISC",

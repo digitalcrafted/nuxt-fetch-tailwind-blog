@@ -1,4 +1,4 @@
-function initialState() {
+function initialState () {
   return {
     posts: [],
     pages: {
@@ -11,7 +11,7 @@ function initialState() {
       prev_page_url: null,
       total: null
     },
-    post:   {
+    post: {
       id: null,
       title: null,
       post: null,
@@ -28,18 +28,25 @@ export const state = () => ({
   post: initialState().post
 })
 export const actions = {
-  async fetchPosts({ commit, dispatch }, options) {
+  async fetchPosts ({commit, dispatch}, options) {
     try {
       const page = options.page || 1
-      await this.$axios.$get('posts.json').then((response) => {
-        commit('setPosts', {page, posts: response})
-        commit('setPages', {page, posts: response})
+      await fetch('posts.json').then(async response => {
+        const data = await response.json()
+        commit('setPosts', {page, posts: data})
+        commit('setPages', {page, posts: data})
+        // check for error response
+        if (!data.length) {
+          // get error message from body or default to response statusText
+          const error = (data && data.message) || response.statusText
+          return Promise.reject(error)
+        }
       })
     } catch (e) {
       console.log(e.message)
     }
   },
-  async fetchPost({ commit, dispatch }, options) {
+  async fetchPost ({commit, dispatch}, options) {
     try {
       const id = options.id
       await this.$axios.$get('posts.json').then((response) => {
@@ -51,39 +58,39 @@ export const actions = {
   }
 }
 export const mutations = {
-  setPosts(state, data) {
+  setPosts (state, data) {
     const page = data.page
     const posts = data.posts
     state.posts = []
     /*prevent array mutation by cloning the array*/
-    state.posts = [...data.posts].splice(((page-1) * state.pages.per_page), state.pages.per_page )
+    state.posts = [...data.posts].splice(((page - 1) * state.pages.per_page), state.pages.per_page)
   },
-  setPost(state, data) {
+  setPost (state, data) {
     const id = Number(data.id)
     const posts = data.posts
     state.post = initialState().post
-    posts.filter((post)=> {
-      if(post.id === id){
+    posts.filter((post) => {
+      if (post.id === id) {
         state.post = JSON.parse(JSON.stringify(post))
       }
     })
   },
-  setPages(state, data) {
+  setPages (state, data) {
     state.pages = initialState().pages
     state.pages.current_page = data.page
     state.pages.first_page_url = 1
     state.pages.last_page = Math.ceil(data.posts.length / state.pages.per_page)
     state.pages.next_page_url = data.page < Math.ceil(data.posts.length / state.pages.per_page) ? data.page + 1 : null
-    state.pages.prev_page_url = (Math.ceil(data.posts.length / state.pages.per_page) > data.page) &&  (data.page !== state.pages.first_page_url) ? data.page - 1 : null
+    state.pages.prev_page_url = (Math.ceil(data.posts.length / state.pages.per_page) > data.page) && (data.page !== state.pages.first_page_url) ? data.page - 1 : null
     state.pages.total = Math.ceil(data.posts.length / state.pages.per_page)
   },
-  resetStateData(state) {
+  resetStateData (state) {
     const newState = initialState()
     Object.assign(state, newState)
   }
 }
 export const getters = {
-  getPosts(state) {
+  getPosts (state) {
     return state.posts
   }
 }

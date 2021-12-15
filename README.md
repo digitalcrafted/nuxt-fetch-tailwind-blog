@@ -1,68 +1,29 @@
-# Coding challenge Solution for Julian and Michi
+# When Fetched Over Axios with some Tailwind Styling
 
-Hi Julian and Michi,
+This is a blog site set up in part to
 
-Thank you for the this interesting challenge.
+- demonstrate using Fetch API for making HTTP requests
+- using Tailwind for layout responsiveness and typography
 
-I have completed the challenge, as close to the specification as possible.
+<hr>
 
-*To Build, Release, and Run the project*
-1. Pull the repo updates into your local directory and _cd_ into it
-2. run `yarn && yarn dev`
-3. Please note the solution was tested in Brave (A Chromium browser), but it should work ok in most modern browser.
+I ordinarily default to Axios for HTTP Requests even though the fetch() API is capable of reproducing the key features
+of Axios, and also available browsers today.
 
-Thank you and happy reviewing
+Anyway, here goes
 
-# Coding challenge for Francis
+## Build Setup
 
-Hi Francis,
+```bash
+# install dependencies
+$ yarn install
 
-thanks again for the great interview! We would like to offer you a small coding task to get an impression of how you work. As discussed in our interview, it is important for us that every frontend developer, no matter what their focus is, has a solid base of HTML and CSS knowledge. Therefore we would kindly ask you to build the following:
+# serve with hot reload at localhost:3000
+$ yarn dev
 
-A **blog** as a **Vue Single Page Application** having nine articles (with dummy content, see below). The blog should have:
+# build for production and launch server
+$ yarn build
+$ yarn start
+```
 
-- A **blog overview** with
-  - a main headline
-  - three blog post teasers, each with a title, a short introductory text, an image and a link leading to the blog post
-  - a simple pagination (which updates the rendered blog posts)
-- A **blog post** page with
-  - an image
-  - a title
-  - a long copy containing standard rich text elements: paragraphs, unordered and ordered lists, links, headlines (h2, h3), bold and italic
-
-Both pages should have some **logo or title** (if you want you can use the Factorial logo – you should have gotten it via email – or simply your name. Whatever you want!) and a **main navigation** (Home, About, Blog (which would be active)).
-
-Please feel completely free to **style it in any way you want**, but please keep it very simple to be able to **focus on the actual implementation**.
-
-Make sure it works on **all viewport sizes**.
-
-All content can be **dummy content**: copy can be "Lorem Ipsum…", images can come from https://loremflickr.com, https://placehold.it, …
-
-Please make sure it works in the **latest Chrome _or_ Firefox** – and let us know which one you picked!
-
-We definitely do not need you to finish everything. If you are not able to or if you are not happy with a certain implementation or something like that… Please just make some notes for yourself and we can talk about it afterwards!
-
-Please try to rather finish one thing completely and leave away something else instead finishing everything only partly :-)
-
-We know that this task is rather unspecific–but that helps us to see what you pay attention to.
-
-## What is important for us
-
-- How the quality of the code is
-- If you have an eye for nice looking interfaces
-- What you actually pay attention to when building a frontend
-
-## What we do not expect
-
-- Proper routing
-- Tests for JavaScript
-- Automated linting etc.
-- That you finish everything!
-
-## Questions?
-
-If anything is unclear, not specified enough etc… You can ask Michi anytime via [michael@factorial.io](mailto:michael@factorial.io)!
-
-## And now…
-
-…thank you very much and have fun!
+For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).

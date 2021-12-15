@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="347px" height="142px" viewBox="0 0 347 142" version="1.1" xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink">
+  <title>logo</title>
+  <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g id="Artboard" transform="translate(-19.000000, -41.000000)">
+      <g id="logo" transform="translate(19.000000, 41.000000)">
+        <path
+          d="M76.6153235,28.6515502 C33.5950281,28.6479696 -1.27690925,63.5472185 -1.27253137,106.601204 C-1.27253137,109.178781 37.6131857,79.9531521 76.5172072,80.0111712 C94.4548282,80.0379223 89.9119013,28.6526569 76.6153235,28.6515502 Z"
+          id="Oval" fill="#2A3463"
+          transform="translate(43.532627, 67.706879) rotate(96.000000) translate(-43.532627, -67.706879) "></path>
+        <text id="Tackline" font-family="Rationale-Regular, Rationale" font-size="122.82958" font-weight="normal"
+              letter-spacing="-10.2357983" fill="#2D3D6F">
+          <tspan x="70.1832045" y="111">Tackline</tspan>
+        </text>
+      </g>
+    </g>
+  </g>
+</svg>

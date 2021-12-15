@@ -6,7 +6,7 @@ module.exports = {
     },
     extend: {
       backgroundImage: {
-        'hero-bg': "url('https://bo.factorial.io/sites/default/files/styles/hero_image__large__1x/public/2020-04/_99B5622.jpg.webp?h=b9aa6a85&itok=lx7mK32f')",
+        'hero-bg': 'url("https://cdn.pixabay.com/photo/2015/07/10/15/42/ford-839538_1280.jpg")'
       },
 
     }

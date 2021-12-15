@@ -1,14 +1,13 @@
 <template>
   <div>
-    <Header />
     <Hero />
     <Posts :active-page="activePage" :pages='pages' :posts="posts" @switchPage="switchPage" />
-    <Footer />
   </div>
 </template>
-<script>
-import { mapState } from 'vuex'
-export default {
+<script lang="ts">
+import Vue from 'vue'
+import {mapState} from "vuex"
+export default Vue.extend({
   name: 'Home',
   data () {
     return {
@@ -29,9 +28,9 @@ export default {
   },
   mounted () {
     /*handle direct page visits that does not use the pagination*/
-      this.$nuxt.$store.dispatch('posts/fetchPosts', {page: 1 || this.$route.query.page}).then(() => {
-        this.getPostsList()
-      })
+    this.$store.dispatch('posts/fetchPosts', {page: 1 || this.$route.query.page}).then(() => {
+      this.getPostsList()
+    })
   },
   methods: {
     getPostsList () {
@@ -39,13 +38,13 @@ export default {
     },
     switchPage (page) {
       console.log('here')
-      this.$nuxt.$store.dispatch('posts/fetchPosts', { page: page }).then(() => {
+      this.$store.dispatch('posts/fetchPosts', {page: page}).then(() => {
         this.getPostsList()
       })
     },
     filterPosts (arg) {
       if (arg.length > 3) {
-        this.postsList = this.posts.filter((post)=>{
+        this.postsList = this.posts.filter((post) => {
           return post.title === arg
         })
         return this.postsList
@@ -54,7 +53,6 @@ export default {
       }
     }
   }
-
-}
+})
 </script>
 <style></style>

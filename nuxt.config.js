@@ -2,18 +2,18 @@ export default {
   ssr: false,
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'Factorial Coding Challange',
+    title: 'Nuxt Fetch Tailwind Blog',
     htmlAttrs: {
       lang: 'en'
     },
     meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Blog Post App with Overview. Pagination, and Details View' },
-      { name: 'format-detection', content: 'telephone=no' }
+      {charset: 'utf-8'},
+      {name: 'viewport', content: 'width=device-width, initial-scale=1'},
+      {hid: 'description', name: 'description', content: 'Blog Post App with Overview. Pagination, and Details View'},
+      {name: 'format-detection', content: 'telephone=no'}
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'}
     ]
   },
 
@@ -22,8 +22,8 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    { src: '~plugins/pagination.js', mode: 'client' },
-    { src: '~plugins/vue2-filters.js', mode: 'client' }
+    {src: '~plugins/pagination.js', mode: 'client'},
+    {src: '~plugins/vue2-filters.js', mode: 'client'}
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
