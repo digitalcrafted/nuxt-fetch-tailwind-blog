@@ -31,7 +31,7 @@ export const actions = {
   async fetchPosts ({commit, dispatch}, options) {
     try {
       const page = options.page || 1
-      await fetch('posts.json').then(async response => {
+      await fetch('/posts.json').then(async response => {
         const data = await response.json()
         commit('setPosts', {page, posts: data})
         commit('setPages', {page, posts: data})
@@ -49,7 +49,7 @@ export const actions = {
   async fetchPost ({commit, dispatch}, options) {
     try {
       const id = options.id
-      await fetch('posts.json').then(async response => {
+      await fetch('/posts.json').then(async response => {
         const data = await response.json()
         commit('setPost', {id, posts: data})
         // check for error response
