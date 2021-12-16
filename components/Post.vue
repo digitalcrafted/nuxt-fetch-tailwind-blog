@@ -14,12 +14,14 @@
 
 <script lang="ts">
 import Vue from 'vue'
+
 export default Vue.extend({
   name: 'Post',
   props: {
     data: {
       type: Object,
-      default: () => {}
+      default: () => {
+      }
     }
   }
 })

@@ -14,7 +14,7 @@
       </ul>
       <div class="sm:flex px-3">
         <div class="w-full sm:w-1/2">
-          <h4 class="font-bold text-2xl font-serif pt-10">Nuxt Fetch Tailwind Blog</h4>
+          <h4 class="font-bold text-2xl font-serif pt-10">Tackline</h4>
           <span class="block pt-1 text-xs tracking-wider font-light">&copy;2021 Nuxt Blog</span>
         </div>
         <div class="w-full sm:w-1/2 text-center md:text-right mt-10 sm:mt-0">
@@ -46,6 +46,7 @@
 
 <script lang="ts">
 import Vue from 'vue'
+
 export default Vue.extend({
   name: 'Footer'
 })

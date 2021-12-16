@@ -10,12 +10,14 @@
 
 <script lang="ts">
 import Vue from 'vue'
+
 export default Vue.extend({
   name: 'Article',
   props: {
     post: {
       type: Object,
-      default: () => {}
+      default: () => {
+      }
     }
   }
 })

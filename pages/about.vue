@@ -7,10 +7,11 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import { mapState } from 'vuex'
+import {mapState} from 'vuex'
+
 export default Vue.extend({
   name: 'AboutPage',
-  data () {
+  data() {
     return {
       postsList: [],
       activePage: 1,
@@ -21,18 +22,20 @@ export default Vue.extend({
     ...mapState('posts', ['posts', 'pages', 'post'])
   },
   watch: {
-    $route () {
+    $route() {
       this.getPost(this.$route.params.id)
     }
   },
-  mounted () {
+  mounted() {
     console.log(this.$route.params.id)
     /*handle direct page visits that does not use the pagination*/
-    this.$store.dispatch('posts/fetchPost', {id: this.$route.params.id}).then(() => {})
+    this.$store.dispatch('posts/fetchPost', {id: this.$route.params.id}).then(() => {
+    })
   },
   methods: {
-    getPost (id) {
-      this.$store.dispatch('posts/fetchPost', {id}).then(() => {})
+    getPost(id) {
+      this.$store.dispatch('posts/fetchPost', {id}).then(() => {
+      })
     },
   }
 

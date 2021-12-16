@@ -7,17 +7,18 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import { mapState } from 'vuex'
+import {mapState} from 'vuex'
+
 export default Vue.extend({
   name: 'BlogPost',
-  data () {
+  data() {
     return {
       postsList: [],
       activePage: 1,
       search: null
     }
   },
-  head () {
+  head() {
     const img = this.post.image
     return {
       title: this.post.title,
@@ -47,24 +48,26 @@ export default Vue.extend({
   },
   computed: {
     ...mapState('posts', ['posts', 'pages', 'post']),
-    formatDate () {
+    formatDate() {
       const options = {year: 'numeric', month: 'long', day: 'numeric'}
       return new Date(this.post.created_at * 1000).toLocaleString('en-GB', options)
     }
   },
   watch: {
-    $route () {
+    $route() {
       this.getPost(this.$route.params.id)
     }
   },
-  mounted () {
+  mounted() {
     console.log(this.$route.params.id)
     /*handle direct page visits that does not use the pagination*/
-    this.$store.dispatch('posts/fetchPost', {id: this.$route.params.id}).then(() => {})
+    this.$store.dispatch('posts/fetchPost', {id: this.$route.params.id}).then(() => {
+    })
   },
   methods: {
-    getPost (id) {
-      this.$store.dispatch('posts/fetchPost', {id}).then(() => {})
+    getPost(id) {
+      this.$store.dispatch('posts/fetchPost', {id}).then(() => {
+      })
     },
   }
 

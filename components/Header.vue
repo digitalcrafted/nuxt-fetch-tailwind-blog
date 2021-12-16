@@ -36,10 +36,11 @@
 
 <script lang="ts">
 import Vue from 'vue'
+
 export default Vue.extend({
   name: 'Header',
   methods: {
-    toggleBtn () {
+    toggleBtn() {
       this.$refs['collapse'].classList.toggle('hidden')
       this.$refs['collapse'].classList.toggle('flex')
     }

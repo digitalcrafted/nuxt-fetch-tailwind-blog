@@ -37,6 +37,7 @@
 
 <script lang="ts">
 import Vue from 'vue'
+
 export default Vue.extend({
   name: 'Posts',
   props: {
@@ -46,25 +47,26 @@ export default Vue.extend({
     },
     pages: {
       type: Object,
-      default: () => {}
+      default: () => {
+      }
     },
     posts: {
       type: Array,
       default: () => []
     }
   },
-  data () {
+  data() {
     return {
       currentPage: 1
     }
   },
   watch: {
-    activePage (current) {
+    activePage(current) {
       this.currentPage = current
     }
   },
   methods: {
-    doSwitchPage (arg) {
+    doSwitchPage(arg) {
       this.$emit('switchPage', arg)
     }
   }

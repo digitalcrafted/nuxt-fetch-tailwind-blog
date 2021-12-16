@@ -6,17 +6,18 @@
 </template>
 <script lang="ts">
 import Vue from 'vue'
-import { mapState } from 'vuex'
+import {mapState} from 'vuex'
+
 export default Vue.extend({
   name: 'BlogIndex',
-  data () {
+  data() {
     return {
       postsList: [],
       activePage: 1,
       search: null
     }
   },
-  head () {
+  head() {
     const img = 'https://cdn.pixabay.com/photo/2015/07/10/15/42/ford-839538_1280.jpg'
     return {
       title: 'Fetch Blog',
@@ -48,29 +49,28 @@ export default Vue.extend({
     ...mapState('posts', ['posts', 'pages'])
   },
   watch: {
-    search (val) {
+    search(val) {
       setTimeout(() => {
         this.filterPosts(val)
       }, 2000)
     }
   },
-  mounted () {
+  mounted() {
     /*handle direct page visits that does not use the pagination*/
     this.$store.dispatch('posts/fetchPosts', {page: 1 || this.$route.query.page}).then(() => {
       this.getPostsList()
     })
   },
   methods: {
-    getPostsList () {
+    getPostsList() {
       this.postsList = this.posts
     },
-    switchPage (page) {
-      console.log('here')
+    switchPage(page) {
       this.$store.dispatch('posts/fetchPosts', {page: page}).then(() => {
         this.getPostsList()
       })
     },
-    filterPosts (arg) {
+    filterPosts(arg) {
       if (arg.length > 3) {
         this.postsList = this.posts.filter((post) => {
           return post.title === arg
